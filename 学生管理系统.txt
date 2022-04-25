@@ -1,0 +1,148 @@
+
+
+1
+#include<stdio.h>
+2
+#include<string.h>
+3
+struct Student
+4
+{ 
+5
+    int stuId; 
+6
+    int stuAge; 
+7
+    char stuName[100];
+8
+    struct Student *next;
+9
+};
+10
+    void printStudent(struct Student *curp)
+11
+    {
+12
+        printf("学号: %d, 年龄 : %d , 姓名:%s\n",curp->stuId,curp->stuAge,curp->stuName);
+13
+    }
+14
+        void printLinkedList(struct Student *headp)
+15
+        {
+16
+            while(headp!=NULL) 
+17
+        {  
+18
+            printStudent(headp);
+19
+            headp=headp->next; 
+20
+        }
+21
+    }
+22
+    int main()
+23
+    {  
+24
+        struct Student S1,S2,S3; 
+25
+        S1.stuId=2000;
+26
+        S1.stuAge=20;
+27
+        strcpy(S1.stuName,"小白");
+28
+        S2.stuId=2001;
+29
+        S2.stuAge=30; 
+30
+        strcpy(S2.stuName,"小王");  
+31
+        S3.stuId=2002; S3.stuAge=12; strcpy(S3.stuName,"小张"); 
+32
+        struct Student S4={2004,19,"小李"}; 
+33
+        printf("S1->S2->S3->S4->NULL\n");  
+34
+        S1.next=&S2;
+35
+        S2.next=&S3; 
+36
+        S3.next=&S4; 
+37
+        S4.next=NULL; 
+38
+        struct Student *curp=&S1; printLinkedList(curp); 
+39
+        printf("请输入要查的学生学号:"); 
+40
+        int id; 
+41
+        scanf("%d",&id); 
+42
+        curp=&S1; 
+43
+        int flag=0;
+44
+        while(curp!=NULL)
+45
+        { 
+46
+            if(curp->stuId==id) 
+47
+            { 
+48
+                printStudent(curp);
+49
+                flag=1; 
+50
+                break;
+51
+            } 
+52
+            else 
+53
+            {  
+54
+                curp=curp->next;
+55
+            }
+56
+        } 
+57
+        if(flag==0)    
+58
+            {    
+59
+                printf("找不到\n");
+60
+            }
+61
+        printf("接下来请删除S2"); 
+62
+        S1.next=&S3;
+63
+        S2.next=NULL;
+64
+        
+65
+        curp=&S1;
+66
+        printLinkedList(curp);
+67
+        return 0;
+68
+    }
+69
+​
+缩进 减少缩进 注释 格式化
+S1->S2->S3->S4->NULL
+学号: 2000, 年龄 : 20 , 姓名:小白
+学号: 2001, 年龄 : 30 , 姓名:小王
+学号: 2002, 年龄 : 12 , 姓名:小张
+学号: 2004, 年龄 : 19 , 姓名:小李
+sandbox> timed out after 5s
+Clear
