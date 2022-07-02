@@ -3,23 +3,23 @@
 #include<string.h>
 
 
-void InitialPassword();//³õÊ¼»¯ÃÜÂëº¯Êı
-void homePage();//ÖĞÎÄ²Ëµ¥Ò³
-void loadData();//³õÊ¼»¯
-void saveData();
+void InitialPassword();//åˆå§‹åŒ–å¯†ç å‡½æ•°
+void HomePage();//ä¸­æ–‡èœå•é¡µ
+void LoadData();//åˆå§‹åŒ–
+void SaveData();
 
-void WithdrawMoney();//È¡¿îÒµÎñ
-void TransferMoney();//×ªÕËÒµÎñ
-void Enquiry();//²éÑ¯ÒµÎñ
-void EnquiryBalance();//²éÑ¯Óà¶î
-void EnquiryInformation();//²éÑ¯¸öÈËĞÅÏ¢
+void WithdrawMoney();//å–æ¬¾ä¸šåŠ¡
+void TransferMoney();//è½¬è´¦ä¸šåŠ¡
+void Enquiry();//æŸ¥è¯¢ä¸šåŠ¡
+void EnquiryBalance();//æŸ¥è¯¢ä½™é¢
+void EnquiryInformation();//æŸ¥è¯¢ä¸ªäººä¿¡æ¯
 
 
-void ChangeInformation();//ĞŞ¸ÄĞÅÏ¢Ñ¡ÏîÒ³
-void ChangeUser();//ĞŞ¸ÄÓÃ»§Ãû³Æ
-void ChangeAccountNum();//ĞŞ¸ÄÕË»§
-void Changephone();//ĞŞ¸ÄÁªÏµµç»°
-void ChangePassword();//ĞŞ¸ÄÃÜÂë
+void ChangeInformation();//ä¿®æ”¹ä¿¡æ¯é€‰é¡¹é¡µ
+void ChangeUser();//ä¿®æ”¹ç”¨æˆ·åç§°
+void ChangeAccountNum();//ä¿®æ”¹è´¦æˆ·
+void Changephone();//ä¿®æ”¹è”ç³»ç”µè¯
+void ChangePassword();//ä¿®æ”¹å¯†ç 
 
 
 
@@ -29,7 +29,7 @@ int n;
 
 
 
-//ÓÃ»§ĞÅÏ¢
+//ç”¨æˆ·ä¿¡æ¯
 struct Account
 {
 	char name[100];
@@ -66,7 +66,7 @@ int findAccount2(Account A)
 
 
 
-//²éÕÒµ±Ç°ÕË»§
+//æŸ¥æ‰¾å½“å‰è´¦æˆ·
 int findAccount1(Account a)
 {
 	Account* curP = head;
@@ -82,13 +82,13 @@ int findAccount1(Account a)
 	return 0;
 }
 
-//³õÊ¼»¯ÃÜÂë
+//åˆå§‹åŒ–å¯†ç 
 void InitialPassword()
 {
 	strcpy(curAccount->password, "000000");
 }
 
-//ÑéÖ¤µ±Ç°ÕË»§ÃÜÂë
+//éªŒè¯å½“å‰è´¦æˆ·å¯†ç 
 int findAccount(Account a)
 {
 	Account* curP = head;
@@ -105,51 +105,51 @@ int findAccount(Account a)
 }
 
 
-//È¡¿îÒµÎñ
+//å–æ¬¾ä¸šåŠ¡
 void WithdrawMoney()
 {
 	int a;
-	printf("ÇëÊäÈëÄãÒªÈ¡³öµÄ½ğ¶î\t");
-	printf("½ğ¶îÎª100µÄÕûÊı\n");
+	printf("è¯·è¾“å…¥ä½ è¦å–å‡ºçš„é‡‘é¢\t");
+	printf("é‡‘é¢ä¸º100çš„æ•´æ•°\n");
 	scanf("%d", &a);
 	if (a % 100)
 	{
-		printf("½ğ¶îÎª100µÄÕûÊı!ÇëÖØĞÂÊäÈë\n");
+		printf("é‡‘é¢ä¸º100çš„æ•´æ•°!è¯·é‡æ–°è¾“å…¥\n");
 	}
 	else
 	{
-		printf("È¡¿î³É¹¦\n");
+		printf("å–æ¬¾æˆåŠŸ\n");
 	}
 }
 
-//×ªÕËÒµÎñ
+//è½¬è´¦ä¸šåŠ¡
 void TransferMoney()
 {
 	int a;
-	printf("ÇëÊäÈëÄãÒª×ªÕËµÄÕË»§\t");
-	printf("½ğ¶îÎª100µÄÕûÊı\n");
+	printf("è¯·è¾“å…¥ä½ è¦è½¬è´¦çš„è´¦æˆ·\t");
+	printf("é‡‘é¢ä¸º100çš„æ•´æ•°\n");
 	scanf("%d", &a);
 	if (a%100)
 	{
-		printf("½ğ¶îÎª100µÄÕûÊı!ÇëÖØĞÂÊäÈë\n");
+		printf("é‡‘é¢ä¸º100çš„æ•´æ•°!è¯·é‡æ–°è¾“å…¥\n");
 	}
 	else
 	{
-		printf("×ªÕË³É¹¦\n");
+		printf("è½¬è´¦æˆåŠŸ\n");
 	}
 }
 
-//²éÑ¯ÒµÎñÒ³
+//æŸ¥è¯¢ä¸šåŠ¡é¡µ
 void Enquiry()
 {
 
 	int a, k = 0;
 	while (k < 3)
 	{
-		printf("\n\t1£º²éÑ¯Óà¶î\n");
-		printf("\n\t2£º²éÑ¯¸öÈËĞÅÏ¢\n");
-		printf("\n\t3£º·µ»ØÖ÷Ò³\n");
-		printf("\n\t0£ºÍË³öÏµÍ³\n");
+		printf("\n\t1ï¼šæŸ¥è¯¢ä½™é¢\n");
+		printf("\n\t2ï¼šæŸ¥è¯¢ä¸ªäººä¿¡æ¯\n");
+		printf("\n\t3ï¼šè¿”å›ä¸»é¡µ\n");
+		printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 		switch (a)
 		{
@@ -162,12 +162,12 @@ void Enquiry()
 			k == 3;
 			break;
 		case 3:
-			homePage();
+			HomePage();
 			k == 3;
 			break;
 		case 0:
 			k == 3;
-			saveData();
+			SaveData();
 			exit(0);
 		default:
 			k++;
@@ -176,17 +176,17 @@ void Enquiry()
 	}
 }
 
-//²éÑ¯Óà¶î
+//æŸ¥è¯¢ä½™é¢
 void EnquiryBalance()
 {
-	printf("\tÄúµÄÓà¶îÎª£º\n\t\t%lf\n",&curAccount->balance);
+	printf("\tæ‚¨çš„ä½™é¢ä¸ºï¼š\n\t\t%lf\n",&curAccount->balance);
 	printf("\n");
 	int a,k = 0;
 	while (k < 3)
 	{
-		printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-		printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-		printf("\n\t0£ºÍË³öÏµÍ³\n");
+		printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+		printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+		printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 		switch (a)
 		{
@@ -195,12 +195,12 @@ void EnquiryBalance()
 			k == 3;
 			break;
 		case 2:
-			homePage();
+			HomePage();
 			k == 3;
 			break;
 		case 0:
 			k == 3;
-			saveData();
+			SaveData();
 			exit(0);
 		default:
 			k++;
@@ -209,19 +209,19 @@ void EnquiryBalance()
 	}
 }
 
-//²éÑ¯¸öÈËĞÅÏ¢
+//æŸ¥è¯¢ä¸ªäººä¿¡æ¯
 void EnquiryInformation()
 {
-	printf("\tĞÕÃû£º\n\t\t%s\n", curAccount->name);
-	printf("\tÕËºÅ£º\n\t\t%s\n", curAccount->username);
-	printf("\tÁªÏµµç»°£º\n\t\t%s\n", curAccount->phonenum);
+	printf("\tå§“åï¼š\n\t\t%s\n", curAccount->name);
+	printf("\tè´¦å·ï¼š\n\t\t%s\n", curAccount->username);
+	printf("\tè”ç³»ç”µè¯ï¼š\n\t\t%s\n", curAccount->phonenum);
 	printf("\n");
 	int a, k = 0;
 	while (k < 3)
 	{
-		printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-		printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-		printf("\n\t0£ºÍË³öÏµÍ³\n");
+		printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+		printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+		printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 		switch (a)
 		{
@@ -230,12 +230,12 @@ void EnquiryInformation()
 			k == 3;
 			break;
 		case 2:
-			homePage();
+			HomePage();
 			k == 3;
 			break;
 		case 0:
 			k == 3;
-			saveData();
+			SaveData();
 			exit(0);
 		default:
 			k++;
@@ -244,30 +244,30 @@ void EnquiryInformation()
 	}
 }
 
-//ĞŞ¸ÄÓÃ»§
+//ä¿®æ”¹ç”¨æˆ·
 void ChangeUser()
 {
 	int a,k = 0;
 	char Password[100];
 	while (k<3)
 	{
-		printf("ÇëÊäÈëÃÜÂë£º\n");
+		printf("è¯·è¾“å…¥å¯†ç ï¼š\n");
 		scanf("%s", Password);
 		if (strcmp(Password, curAccount->password) == 0)
 		{
-			printf("ÇëÊäÈëĞÂÓÃ»§Ãû³Æ:\n");
+			printf("è¯·è¾“å…¥æ–°ç”¨æˆ·åç§°:\n");
 			scanf("%s", curAccount->name);
 			printf("\n");
-			printf("ÓÃ»§Ãû³ÆĞŞ¸Ä³É¹¦£¡\n");
-			saveData();
+			printf("ç”¨æˆ·åç§°ä¿®æ”¹æˆåŠŸï¼\n");
+			SaveData();
 			k = 3;
 
 			int k2 = 0;
 			while (k2 < 3)
 			{
-				printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-				printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-				printf("\n\t0£ºÍË³öÏµÍ³\n");
+				printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+				printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+				printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -276,12 +276,12 @@ void ChangeUser()
 					k == 3;
 					break;
 				case 2:
-					homePage();
+					HomePage();
 					k == 3;
 					break;
 				case 0:
 					k == 3;
-					saveData();
+					SaveData();
 					exit(0);
 				default:
 					k++;
@@ -292,12 +292,12 @@ void ChangeUser()
 		else
 		{
 			k++;
-			printf("ÃÜÂëÊäÈë´íÎó! \t%d\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n",3-k);
+			printf("å¯†ç è¾“å…¥é”™è¯¯! \t%d\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n",3-k);
 		}
 	}
 }
 
-//ĞŞ¸ÄÕË»§
+//ä¿®æ”¹è´¦æˆ·
 void ChangeAccountNum()
 {
 	system("cls");
@@ -305,25 +305,25 @@ void ChangeAccountNum()
 	char Password[100];
 	while (k < 3)
 	{
-		printf("ÇëÊäÈëÃÜÂë£º\n");
+		printf("è¯·è¾“å…¥å¯†ç ï¼š\n");
 		scanf("%s", Password);
 		system("cls");
 		if (strcmp(Password, curAccount->password) == 0)
 		{
-			printf("ÇëÊäÈëĞÂÕË»§ºÅÂë:\n");
+			printf("è¯·è¾“å…¥æ–°è´¦æˆ·å·ç :\n");
 			scanf("%s", curAccount->username);
 			system("cls");
 			printf("\n");
-			printf("ÕË»§ºÅÂëĞŞ¸Ä³É¹¦£¡\n");
-			saveData();
+			printf("è´¦æˆ·å·ç ä¿®æ”¹æˆåŠŸï¼\n");
+			SaveData();
 			k = 3;
 
 			int k2 = 0;
 			while (k2 < 3)
 			{
-				printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-				printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-				printf("\n\t0£ºÍË³öÏµÍ³\n");
+				printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+				printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+				printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -332,12 +332,12 @@ void ChangeAccountNum()
 					k2 == 3;
 					break;
 				case 2:
-					homePage();
+					HomePage();
 					k2 == 3;
 					break;
 				case 0:
 					k2 == 3;
-					saveData();
+					SaveData();
 					exit(0);
 				default:
 					k2++;
@@ -349,13 +349,13 @@ void ChangeAccountNum()
 		{
 			k++;
 			system("cls");
-			printf("ÃÜÂëÊäÈë´íÎó! \t%d\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n", 3 - k);
+			printf("å¯†ç è¾“å…¥é”™è¯¯! \t%d\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n", 3 - k);
 		}
 	}
 }
 
 
-//ĞŞ¸ÄÁªÏµµç»°
+//ä¿®æ”¹è”ç³»ç”µè¯
 void Changephone()
 {
 	system("cls");
@@ -363,25 +363,25 @@ void Changephone()
 	char Password[100];
 	while (k < 3)
 	{
-		printf("ÇëÊäÈëÃÜÂë£º\n");
+		printf("è¯·è¾“å…¥å¯†ç ï¼š\n");
 		scanf("%s", Password);
 		system("cls");
 		if (strcmp(Password, curAccount->password) == 0)
 		{
-			printf("ÇëÊäÈëĞÂÁªÏµµç»°ºÅÂë:\n");
+			printf("è¯·è¾“å…¥æ–°è”ç³»ç”µè¯å·ç :\n");
 			scanf("%s", curAccount->phonenum);
 			system("cls");
 			printf("\n");
-			printf("ÁªÏµµç»°ĞŞ¸Ä³É¹¦£¡\n");
-			saveData();
+			printf("è”ç³»ç”µè¯ä¿®æ”¹æˆåŠŸï¼\n");
+			SaveData();
 			k = 3;
 
 			int k2 = 0;
 			while (k2 < 3)
 			{
-				printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-				printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-				printf("\n\t0£ºÍË³öÏµÍ³\n");
+				printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+				printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+				printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -390,12 +390,12 @@ void Changephone()
 					k2 == 3;
 					break;
 				case 2:
-					homePage();
+					HomePage();
 					k2 == 3;
 					break;
 				case 0:
 					k2 == 3;
-					saveData();
+					SaveData();
 					exit(0);
 				default:
 					k2++;
@@ -407,13 +407,13 @@ void Changephone()
 		{
 			k++;
 			system("cls");
-			printf("ÃÜÂëÊäÈë´íÎó! \t%d\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n", 3 - k);
+			printf("å¯†ç è¾“å…¥é”™è¯¯! \t%d\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n", 3 - k);
 		}
 	}
 }
 
 
-//ĞŞ¸ÄÃÜÂë
+//ä¿®æ”¹å¯†ç 
 void ChangePassword()
 {
 	system("cls");
@@ -421,25 +421,25 @@ void ChangePassword()
 	char Password[100];
 	while (k < 3)
 	{
-		printf("ÇëÊäÈëÃÜÂë£º\n");
+		printf("è¯·è¾“å…¥å¯†ç ï¼š\n");
 		scanf("%s", Password);
 		system("cls");
 		if (strcmp(Password, curAccount->password) == 0)
 		{
-			printf("ÇëÊäÈëĞÂÃÜÂë:\n");
+			printf("è¯·è¾“å…¥æ–°å¯†ç :\n");
 			scanf("%s", curAccount->password);
 			system("cls");
 			printf("\n");
-			printf("ÃÜÂëĞŞ¸Ä³É¹¦£¡\n");
-			saveData();
+			printf("å¯†ç ä¿®æ”¹æˆåŠŸï¼\n");
+			SaveData();
 			k = 3;
 
 			int k2 = 0;
 			while (k2 < 3)
 			{
-				printf("\n\t1£º·µ»ØÉÏÒ»Ò³\n");
-				printf("\n\t2£º·µ»ØÖ÷Ò³\n");
-				printf("\n\t0£ºÍË³öÏµÍ³\n");
+				printf("\n\t1ï¼šè¿”å›ä¸Šä¸€é¡µ\n");
+				printf("\n\t2ï¼šè¿”å›ä¸»é¡µ\n");
+				printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 				scanf("%d", &a);
 				switch (a)
 				{
@@ -448,12 +448,12 @@ void ChangePassword()
 					k2 == 3;
 					break;
 				case 2:
-					homePage();
+					HomePage();
 					k2 == 3;
 					break;
 				case 0:
 					k2 == 3;
-					saveData();
+					SaveData();
 					exit(0);
 				default:
 					k2++;
@@ -465,25 +465,25 @@ void ChangePassword()
 		{
 			k++;
 			system("cls");
-			printf("ÃÜÂëÊäÈë´íÎó! \t%d\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n", 3 - k);
+			printf("å¯†ç è¾“å…¥é”™è¯¯! \t%d\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n", 3 - k);
 		}
 	}
 }
 
 
-//ĞŞ¸ÄĞÅÏ¢Ñ¡ÏîÒ³
+//ä¿®æ”¹ä¿¡æ¯é€‰é¡¹é¡µ
 void ChangeInformation()
 {
 	system("cls");
 	int a, k2 =1;
 	while (k2)
 	{
-		printf("\n\t1.ĞŞ¸ÄÓÃ»§\n");
-		printf("\n\t2.ĞŞ¸ÄÕËºÅ\n");
-		printf("\n\t3.ĞŞ¸ÄÁªÏµµç»°\n");
-		printf("\n\t4.ĞŞ¸ÄÃÜÂë\n");
-		printf("\n\t9.·µ»ØÉÏÒ»Ò³\n");
-		printf("\n\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.ä¿®æ”¹ç”¨æˆ·\n");
+		printf("\n\t2.ä¿®æ”¹è´¦å·\n");
+		printf("\n\t3.ä¿®æ”¹è”ç³»ç”µè¯\n");
+		printf("\n\t4.ä¿®æ”¹å¯†ç \n");
+		printf("\n\t9.è¿”å›ä¸Šä¸€é¡µ\n");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 
 		switch (a)
@@ -505,32 +505,32 @@ void ChangeInformation()
 			k2 = 0;
 			break;
 		case 9:
-			homePage();
+			HomePage();
 			k2 = 0;
 			break;
 		case 0:
-			saveData();
+			SaveData();
 			exit(0);
 		default:
 			system("cls");
-			printf("ÊäÈë´íÎó£¡\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n");
+			printf("è¾“å…¥é”™è¯¯ï¼\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n");
 			break;
 		}
 	}
 }
 
-//ÖĞÎÄ²Ëµ¥Ò³
-void homePage()
+//ä¸­æ–‡èœå•é¡µ
+void HomePage()
 {
 	int a, k1 = 1;
 	while (k1)
 	{
 		k1 = 0;
-		printf("\n\t1.È¡¿î\n");
-		printf("\n\t2.×ªÕÊ\n");
-		printf("\n\t3.²éÑ¯\n");
-		printf("\n\t4.ĞŞ¸Ä¸öÈË×ÊÁÏ\n");
-		printf("\n\t0.ÍË³öÏµÍ³\n");
+		printf("\n\t1.å–æ¬¾\n");
+		printf("\n\t2.è½¬å¸\n");
+		printf("\n\t3.æŸ¥è¯¢\n");
+		printf("\n\t4.ä¿®æ”¹ä¸ªäººèµ„æ–™\n");
+		printf("\n\t0.é€€å‡ºç³»ç»Ÿ\n");
 		scanf("%d", &a);
 		switch (a)
 		{
@@ -547,25 +547,25 @@ void homePage()
 			ChangeInformation();
 			break;
 		case 0:
-			saveData();
+			SaveData();
 			exit(0);
 			break;
 		default:
-			printf("ÊäÈë´íÎó£¡\n");
+			printf("è¾“å…¥é”™è¯¯ï¼\n");
 			k1 = 1;
 			break;
 		}
 	}
 }
 
-//Ó¢Óï²Ëµ¥
+//è‹±è¯­èœå•
 void EnglishhomePage()
 {
 	int a, k = 1;
 	while (k)
 	{
 		k = 0;
-		printf("====================£¨Ã»ÓĞÍêÉÆÍê±Ï£©\n");
+		printf("====================ï¼ˆæ²¡æœ‰å®Œå–„å®Œæ¯•ï¼‰\n");
 		printf("1.Withdraw money.\t");
 		printf("2.Transfer money.\n");
 		printf("3.Change password.\n");
@@ -584,33 +584,33 @@ void EnglishhomePage()
 			ChangePassword();
 			break;
 		case 0:
-			saveData();
+			SaveData();
 			exit(0);
 			break;
 		default:
-			printf("Error£¡\n");
+			printf("Errorï¼\n");
 			k = 1;
 			break;
 		}
 	}
 }
 
-//ÖĞÎÄµÇÂ¼
+//ä¸­æ–‡ç™»å½•
 void ChineseSignIn()
 {
 	system("cls");
 	int m=0,n=0;
-	while (m < 3)//3´ÎÊäÈë´íÕËºÅ½«ÍË³öÏµÍ³
+	while (m < 3)//3æ¬¡è¾“å…¥é”™è´¦å·å°†é€€å‡ºç³»ç»Ÿ
 	{
 		Account a;
-		printf("\n\tÇëÊäÈëÕËºÅ£º\n");
+		printf("\n\tè¯·è¾“å…¥è´¦å·ï¼š\n");
 		scanf("%s", a.username);
 		system("cls");
 		if (findAccount1(a))
 		{
-			while (n<3)//3´ÎÊäÈë´íÃÜÂë½«ÍË³öÏµÍ³
+			while (n<3)//3æ¬¡è¾“å…¥é”™å¯†ç å°†é€€å‡ºç³»ç»Ÿ
 			{
-				printf("\n\tÇëÊäÈëÃÜÂë£º\n");
+				printf("\n\tè¯·è¾“å…¥å¯†ç ï¼š\n");
 				scanf("%s", a.password);
 				system("cls");
 
@@ -618,8 +618,8 @@ void ChineseSignIn()
 				{
 					m = 3;
 					n = 3;
-					printf("\n==========µÇÂ¼³É¹¦==========\n");
-					homePage();
+					printf("\n==========ç™»å½•æˆåŠŸ==========\n");
+					HomePage();
 					break;
 				}
 				else
@@ -628,13 +628,13 @@ void ChineseSignIn()
 					n++;
 					if (n==3)
 					{
-						printf("\n\t¸ÃÕËºÅÒÑ¾­±»¶³½á£¬ÇëÁªÏµºóÌ¨ÕÒ»Ø¡£\n");
+						printf("\n\tè¯¥è´¦å·å·²ç»è¢«å†»ç»“ï¼Œè¯·è”ç³»åå°æ‰¾å›ã€‚\n");
 						InitialPassword();
 						break;
 					}
 					else
 					{
-						printf("\n\tÃÜÂë´íÎó  %d´Î»ú»áºóÕËºÅ½«»á±»¶³½á\n", 3 - n);
+						printf("\n\tå¯†ç é”™è¯¯  %dæ¬¡æœºä¼šåè´¦å·å°†ä¼šè¢«å†»ç»“\n", 3 - n);
 					}
 				}
 			}
@@ -642,18 +642,18 @@ void ChineseSignIn()
 		else
 		{
 			m++;
-			printf("\n\tÃ»ÓĞ²éÕÒµ½¸ÃÓÃ»§!  %d  ÇëÖØĞÂÊäÈë£º\n",3-m);
+			printf("\n\tæ²¡æœ‰æŸ¥æ‰¾åˆ°è¯¥ç”¨æˆ·!  %d  è¯·é‡æ–°è¾“å…¥ï¼š\n",3-m);
 			if (m==3)
 			{
-				printf("\n\t´íÎó£¬ÒÑÍË³öÏµÍ³\n");
-				saveData();
+				printf("\n\té”™è¯¯ï¼Œå·²é€€å‡ºç³»ç»Ÿ\n");
+				SaveData();
 				exit(0);
 			}
 		}
 	}
 }
 
-//´òÓ¡µ±Ç°Á´±í
+//æ‰“å°å½“å‰é“¾è¡¨
 void printAccount(Account* curP)
 {
 	printf("%s\t%s\n", curP->username, curP->password);
@@ -669,7 +669,7 @@ void printAccount(Account* curP)
 	}
 }*/
 
-//´òÓ¡Á´±í
+//æ‰“å°é“¾è¡¨
 void printLinkedList()
 {
 	Account* curP = head;
@@ -680,48 +680,48 @@ void printLinkedList()
 	}
 }
 
-//ÖĞÎÄ×¢²á
-void ChineseSignUp()//ÖĞÎÄ×¢²áº¯Êı
+//ä¸­æ–‡æ³¨å†Œ
+void ChineseSignUp()//ä¸­æ–‡æ³¨å†Œå‡½æ•°
 {
 	int a,k = 0;
-	printf("\n\t»¶Ó­×¢²á\n\n");
+	printf("\n\tæ¬¢è¿æ³¨å†Œ\n\n");
 
 	Account* P = (Account*)malloc(sizeof(Account));
 	P->next = NULL;
 	if (head == NULL)
 	{
 		head = P;
-		tail = P;//Èç¹ûÕâÊÇµÚÒ»¸ö´´½¨µÄ½áµã£¬Ôò½«Í· Î²Ö¸ÕëÖ¸ÏòÕâ¸ö½áµã
+		tail = P;//å¦‚æœè¿™æ˜¯ç¬¬ä¸€ä¸ªåˆ›å»ºçš„ç»“ç‚¹ï¼Œåˆ™å°†å¤´ å°¾æŒ‡é’ˆæŒ‡å‘è¿™ä¸ªç»“ç‚¹
 	}
 	else
 	{
-		tail->next = P; //Èç¹û²»ÊÇµÚÒ»¸ö´´½¨µÄ½áµã£¬Ôò½«ÉÏÒ»¸ö½áµãµÄºó¼ÌÖ¸ÕëÖ¸Ïòµ±Ç°½áµã
-		printf("ÇëÊäÈëÄãµÄĞÕÃû\n");
+		tail->next = P; //å¦‚æœä¸æ˜¯ç¬¬ä¸€ä¸ªåˆ›å»ºçš„ç»“ç‚¹ï¼Œåˆ™å°†ä¸Šä¸€ä¸ªç»“ç‚¹çš„åç»§æŒ‡é’ˆæŒ‡å‘å½“å‰ç»“ç‚¹
+		printf("è¯·è¾“å…¥ä½ çš„å§“å\n");
 		scanf("%s", P->name);
 		Account A;
-		printf("ÇëÊäÈëÄã¼´½«×¢²áµÄÕË»§ºÅÂë¡¾10Î»¡¿\n");
+		printf("è¯·è¾“å…¥ä½ å³å°†æ³¨å†Œçš„è´¦æˆ·å·ç ã€10ä½ã€‘\n");
 		scanf("%s", A.username);
 
 		
 		if (findAccount2(A))
 		{
-			printf("¸ÃÕËºÅÒÑ¾­±»×¢²á²»¿ÉÓÃ\n");
+			printf("è¯¥è´¦å·å·²ç»è¢«æ³¨å†Œä¸å¯ç”¨\n");
 			exit(0);
 		}
 		else
 		{
 			strcpy(P->username,A.username);
 		}
-		printf("ÇëÊäÈëÄãµÄµç»°ºÅÂë¡¾11Î»¡¿\n");
+		printf("è¯·è¾“å…¥ä½ çš„ç”µè¯å·ç ã€11ä½ã€‘\n");
 		scanf("%s", P->phonenum);
-		printf("ÇëÉèÖÃÄãµÄÕË»§ÃÜÂë¡¾6Î»¡¿\n");
+		printf("è¯·è®¾ç½®ä½ çš„è´¦æˆ·å¯†ç ã€6ä½ã€‘\n");
 		scanf("%s", P->password);
-		saveData();
+		SaveData();
 		while (k<3)
 		{
 			system("cls");
-			printf("\n\t1£º·µ»ØµÇÂ¼\n");
-			printf("\n\t0£ºÍË³öÏµÍ³\n");
+			printf("\n\t1ï¼šè¿”å›ç™»å½•\n");
+			printf("\n\t0ï¼šé€€å‡ºç³»ç»Ÿ\n");
 			scanf("%d", &a);
 			if (a == 1)
 			{
@@ -735,14 +735,14 @@ void ChineseSignUp()//ÖĞÎÄ×¢²áº¯Êı
 			else
 			{
 				k++;
-				printf("ÃÜÂëÊäÈë´íÎó! \t%d\tÇë°´ÕÕÌáÊ¾ÖØĞÂÊäÈë£º\n", 3 - k);
+				printf("å¯†ç è¾“å…¥é”™è¯¯! \t%d\tè¯·æŒ‰ç…§æç¤ºé‡æ–°è¾“å…¥ï¼š\n", 3 - k);
 			}
 		}
 	}
 }
 
-//Ó¢Óï×¢²á
-void EnglishSignUp()//Ó¢Óï×¢²áº¯Êı
+//è‹±è¯­æ³¨å†Œ
+void EnglishSignUp()//è‹±è¯­æ³¨å†Œå‡½æ•°
 {
 	printf("Welcome.\n");
 	printf("\n");
@@ -768,17 +768,17 @@ void EnglishSignUp()//Ó¢Óï×¢²áº¯Êı
 	}
 }
 
-//Ó¢ÓïµÇÂ¼
+//è‹±è¯­ç™»å½•
 void EnglishSignIn()
 {
 	int k = 0;
 	while (k < 3)
 	{
 		Account a;
-		printf("please enter your account number.[20 figures]£º\n");
+		printf("please enter your account number.[20 figures]ï¼š\n");
 		scanf("%s", a.username);
 
-		printf("please enter your account password.[6 figures]£º\n");
+		printf("please enter your account password.[6 figures]ï¼š\n");
 		scanf("%s", a.password);
 
 		if (findAccount(a))
@@ -804,8 +804,8 @@ void EnglishSignIn()
 	}
 }
 
-//³õÊ¼»¯
-void loadData()//³õÊ¼»¯º¯Êı
+//åˆå§‹åŒ–
+void LoadData()//åˆå§‹åŒ–å‡½æ•°
 {
 	FILE* fp = fopen("D:/atm.txt", "r");
 	if (fp != NULL)
@@ -831,31 +831,31 @@ void loadData()//³õÊ¼»¯º¯Êı
 	}
 }
 
-//¿ªÊ¼½çÃæ
+//å¼€å§‹ç•Œé¢
 void start()
 {
 	int n1,k=1;
 	while (k)
 	{
-		printf("\nÇëÑ¡ÔñÓïÑÔ£º\t");
-		printf("Please choose language£º\n");
-		printf("\n\t1£ºÖĞÎÄ\n");
-		printf("\n\t2£ºEnglish\n");
-		printf("\n\t0£ºÍË³ö Exit\n");
+		printf("\nè¯·é€‰æ‹©è¯­è¨€ï¼š\t");
+		printf("Please choose languageï¼š\n");
+		printf("\n\t1ï¼šä¸­æ–‡\n");
+		printf("\n\t2ï¼šEnglish\n");
+		printf("\n\t0ï¼šé€€å‡º Exit\n");
 		scanf("%d", &n);
 
 		switch (n)
 		{
 		case 1:
 			system("cls");
-			printf("\n\t1£ºÓÃ»§×¢²á\n");
-			printf("\n\t2£ºÓÃ»§µÇÂ¼\n");
-			printf("\n\tÆäËü£º·µ»ØÉÏÒ»Ò³\n");
+			printf("\n\t1ï¼šç”¨æˆ·æ³¨å†Œ\n");
+			printf("\n\t2ï¼šç”¨æˆ·ç™»å½•\n");
+			printf("\n\tå…¶å®ƒï¼šè¿”å›ä¸Šä¸€é¡µ\n");
 			scanf("%d", &n1);
 			k = 0;
 			if (n1 == 1)
 			{
-				ChineseSignUp();//ÖĞÎÄ×¢²áº¯Êı
+				ChineseSignUp();//ä¸­æ–‡æ³¨å†Œå‡½æ•°
 			}
 			else if (n1 == 2)
 			{
@@ -866,15 +866,15 @@ void start()
 			break;
 		case 2:
 			system("cls");
-			printf("\n\t1£ºSign up\n");
-			printf("\n\t2£ºSign in\n");
-			printf("\n\tOthers£ºBack to previous page\n");
+			printf("\n\t1ï¼šSign up\n");
+			printf("\n\t2ï¼šSign in\n");
+			printf("\n\tOthersï¼šBack to previous page\n");
 			scanf("%d", &n1);
 			k = 0;
 			break;
 			if (n1 == 1)
 			{
-				EnglishSignUp();//Ó¢Óï×¢²áº¯Êı
+				EnglishSignUp();//è‹±è¯­æ³¨å†Œå‡½æ•°
 			}
 			else if (n1 == 2)
 			{
@@ -883,11 +883,11 @@ void start()
 			else
 				k = 1;
 		case 0:
-			saveData();
+			SaveData();
 			exit(0);
 		default:
 			k = 1;
-			printf("\n\tÊäÈëÓĞÎó£¬Çë°´ÕÕÌáÊ¾ÔÙ´ÎÊäÈë!\t");
+			printf("\n\tè¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰ç…§æç¤ºå†æ¬¡è¾“å…¥!\t");
 			printf("\t");
 			printf("Error,please follow the prompts to enter again!\n");
 			break;
@@ -896,8 +896,8 @@ void start()
 }
 
 
-//±£´æÊı¾İ
-void saveData()
+//ä¿å­˜æ•°æ®
+void SaveData()
 {
 	FILE* fp = fopen("D:/atm.txt", "w");
 	if (fp != NULL)
@@ -914,10 +914,10 @@ void saveData()
 
 int main()
 {
-	loadData();
+	LoadData();
 	start();
 
 	printLinkedList();
-	saveData();
+	SaveData();
 	return 0;
 }
